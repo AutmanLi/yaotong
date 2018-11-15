@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:yaotong"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        WindowStyle="None" AllowsTransparency="True"
+        Title="药瞳" Height="465" Width="530" Topmost="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown">
+    <Grid Background="Red">
+        <WrapPanel Height="30"  Background="#4C9CFB" DockPanel.Dock="Top" Margin="415,7,0,428">
+            <TextBlock Name="txtTitle" Margin="1,0,0,0"  Padding="5,3,2,3" Text="个人信息" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="微软雅黑"  
+                   Foreground="White"/>
+
+        </WrapPanel>
+
+        <!--用作透明化的StackPanel-->
+        <StackPanel x:Name="stpBG" Background="White"  Opacity="0.6" Margin="90,70,120,85">
+            <ContentControl x:Name="ccl" Height="285" Margin="10,0"/>
+            <TextBlock Text="此处随便写一些东西" FontSize="20" Canvas.Left="210" Canvas.Top="10"></TextBlock>
+        </StackPanel>
+
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="210,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+
+
     </Grid>
 </Window>
