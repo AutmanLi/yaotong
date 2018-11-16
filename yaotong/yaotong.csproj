@@ -77,6 +77,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ImageToBitmapSourceConverter.cs" />
     <Compile Include="imageButton.xaml.cs">
       <DependentUpon>imageButton.xaml</DependentUpon>
     </Compile>

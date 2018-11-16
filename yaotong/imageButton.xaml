@@ -1,13 +1,42 @@
-﻿<UserControl x:Class="yaotong.imageButton"
+﻿<Button  x:Class="yaotong.ImageButton"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:yaotong"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="450">
-    <Grid>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="450"/>
+             d:DesignHeight="300" d:DesignWidth="300"
+             Background="Transparent"
+             Name="IMGBTN">
 
-    </Grid>
-</UserControl>
+    <Button.Template>
+        <ControlTemplate>
+            <Grid Name="btnGrid">
+                <Image Name="contentImage" 
+                       Source="{Binding ImageSource, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:ImageButton}}"
+                       Stretch="Fill">
+                </Image>
+            </Grid>
+
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding IsMouseOver, ElementName=contentImage}"
+                            Value="True">
+                        </Condition>
+                        <Condition Binding="{Binding IsImageSourceHoverExist, 
+                            RelativeSource={RelativeSource Self}}"
+                            Value="True">
+                        </Condition>
+                    </MultiDataTrigger.Conditions>
+
+                    <Setter TargetName="contentImage" Property="Source" 
+                                        Value="{Binding ImageSourceHover,
+                                        RelativeSource={RelativeSource Mode=FindAncestor,
+                                        AncestorType=local:ImageButton}}"/>
+                </MultiDataTrigger>
+            </ControlTemplate.Triggers>
+
+        </ControlTemplate>
+    </Button.Template>
+</Button>
