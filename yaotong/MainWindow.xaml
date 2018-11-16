@@ -3,25 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Common="clr-namespace:yaotong"
         xmlns:local="clr-namespace:yaotong"
         mc:Ignorable="d"
-        WindowStyle="None" AllowsTransparency="True"
+        WindowStyle="None" AllowsTransparency="True" 
         Title="药瞳" Height="465" Width="530" Topmost="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown">
-    <Grid Background="Red">
-        <WrapPanel Height="30"  Background="#4C9CFB" DockPanel.Dock="Top" Margin="415,7,0,428">
-            <TextBlock Name="txtTitle" Margin="1,0,0,0"  Padding="5,3,2,3" Text="个人信息" 
+    <Grid>
+        
+        <Canvas Height="30"   Background="#4C9CFB" DockPanel.Dock="Top" Margin="430,7,0,428">
+            <TextBlock Name="txtTitle"  Padding="5,3,2,3" Text="药瞳" 
                    HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="微软雅黑"  
-                   Foreground="White"/>
+                   Foreground="White" Canvas.Left="3" Canvas.Top="3"/>
+            <Image x:Name="image" Height="24" Width="26" HorizontalAlignment="Right" Source="pack://siteoforigin:,,,/image/min.png" Canvas.Left="43" Canvas.Top="3"/>
+            <Image x:Name="image_Copy" Height="24" Width="26" HorizontalAlignment="Right"  Source="pack://siteoforigin:,,,/image/close.png" Canvas.Left="70" Canvas.Top="3"/>
 
-        </WrapPanel>
+        </Canvas>
 
-        <!--用作透明化的StackPanel-->
-        <StackPanel x:Name="stpBG" Background="White"  Opacity="0.6" Margin="90,70,120,85">
-            <ContentControl x:Name="ccl" Height="285" Margin="10,0"/>
-            <TextBlock Text="此处随便写一些东西" FontSize="20" Canvas.Left="210" Canvas.Top="10"></TextBlock>
-        </StackPanel>
+        <!--用作透明化的WrapPanel-->
+        <Canvas x:Name="stpBG" Background="White"  Opacity="0.6" Margin="105,75,105,80">
 
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="210,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="账户：" VerticalAlignment="Top" Canvas.Left="50" Canvas.Top="96"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="密码：" VerticalAlignment="Top" Canvas.Left="50" Canvas.Top="134"/>
+
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194" Canvas.Left="91" Canvas.Top="90"/>
+            <PasswordBox x:Name="passwordBox" Canvas.Left="91" Canvas.Top="130" Width="194"/>
+            <Button x:Name="button" Content="登录" Foreground="White"  Background="Red" Canvas.Left="91" Canvas.Top="170" Width="194" Click="button_Click"/>
+            <Button x:Name="button_Copy" Content="注册" Foreground="White" Background="DarkGreen" Canvas.Left="91" Canvas.Top="211" Width="194" Click="button_Copy_Click"/>
+
+
+        </Canvas>
+
+
+
 
 
 

@@ -19,11 +19,15 @@ namespace yaotong
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow:Window
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            ImageBrush b = new ImageBrush();
+            b.ImageSource = new BitmapImage(new Uri("pack://siteoforigin:,,,/image/background.jpg"));
+            b.Stretch = Stretch.Fill;
+            this.Background = b;
         }
 
         private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -33,6 +37,34 @@ namespace yaotong
                 this.DragMove();
             }
             catch { }
+        }
+
+        #region 自定义标题栏
+        /// <summary>
+        /// 窗口最小化
+        /// </summary>
+        private void btn_min_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized; //设置窗口最小化
+        }
+
+        /// <summary>
+        /// 窗口关闭
+        /// </summary>
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
