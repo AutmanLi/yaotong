@@ -39,32 +39,33 @@ namespace yaotong
             catch { }
         }
 
-        #region 自定义标题栏
-        /// <summary>
-        /// 窗口最小化
-        /// </summary>
-        private void btn_min_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized; //设置窗口最小化
-        }
-
-        /// <summary>
-        /// 窗口关闭
-        /// </summary>
-        private void btn_close_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-        #endregion
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            testWindow tw = new testWindow();
+            Application.Current.MainWindow = tw;
+            this.Close();
+            tw.Show();
         }
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        #region 自定义标题栏
+        /// <summary>
+        /// 窗口关闭
+        /// </summary>
+        private void button_close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+        /// <summary>
+        /// 窗口最小化
+        /// </summary>
+        private void button_min_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized; //设置窗口最小化
+        }
+        #endregion
     }
 }

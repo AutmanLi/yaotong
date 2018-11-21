@@ -8,14 +8,22 @@
         mc:Ignorable="d"
         WindowStyle="None" AllowsTransparency="True" 
         Title="药瞳" Height="465" Width="530" Topmost="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown">
+
     <Grid>
-        
         <Canvas Height="30"   Background="#4C9CFB" DockPanel.Dock="Top" Margin="430,7,0,428">
             <TextBlock Name="txtTitle"  Padding="5,3,2,3" Text="药瞳" 
                    HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontFamily="微软雅黑"  
                    Foreground="White" Canvas.Left="3" Canvas.Top="3"/>
-            <Image x:Name="image" Height="24" Width="26" HorizontalAlignment="Right" Source="pack://siteoforigin:,,,/image/min.png" Canvas.Left="43" Canvas.Top="3"/>
-            <Image x:Name="image_Copy" Height="24" Width="26" HorizontalAlignment="Right"  Source="pack://siteoforigin:,,,/image/close.png" Canvas.Left="70" Canvas.Top="3"/>
+            <Button x:Name="button_min"  Width="24" Height="26" Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Canvas.Left="43" Canvas.Top="2" Click="button_min_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/image/min.png" Stretch="Fill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="button_close" Width="24" Height="26" Style="{DynamicResource MahApps.Metro.Styles.MetroCircleButtonStyle}" Canvas.Left="72" Canvas.Top="2" Click="button_close_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/image/close.png" Stretch="Fill"/>
+                </Button.Background>
+            </Button>
 
         </Canvas>
 
@@ -27,16 +35,12 @@
 
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194" Canvas.Left="91" Canvas.Top="90"/>
             <PasswordBox x:Name="passwordBox" Canvas.Left="91" Canvas.Top="130" Width="194"/>
-            <Button x:Name="button" Content="登录" Foreground="White"  Background="Red" Canvas.Left="91" Canvas.Top="170" Width="194" Click="button_Click"/>
+            <Button x:Name="button" Content="登录" Foreground="White"  Background="Red" Canvas.Left="91" Canvas.Top="170" Width="194" Click="button_Click" />
             <Button x:Name="button_Copy" Content="注册" Foreground="White" Background="DarkGreen" Canvas.Left="91" Canvas.Top="211" Width="194" Click="button_Copy_Click"/>
 
 
+
         </Canvas>
-
-
-
-
-
 
     </Grid>
 </Window>
