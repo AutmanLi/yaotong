@@ -5,9 +5,13 @@
                       Title="药瞳-拥有一双发现药材的眼睛"
                       Height="600"
                       WindowStartupLocation="CenterScreen"
+                      Icon="favicon.ico"
                       ShowIconOnTitleBar="True"
                       Width="800">
+    
     <Grid>
-
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="235,10,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Height="30"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" Width="200" Height="30" Margin="20,10,572,529" />
+        <DataGrid x:Name="userContent" Margin="0,45,0,0"/>
     </Grid>
 </Controls:MetroWindow>
